@@ -20,15 +20,6 @@ public class ConexionDB {
             System.out.println("Error: " + e);
             e.printStackTrace();
         }
-
-//        String cadena = "jdbc:mysql://localhost/BD-DOMIMAN?user=root&password=D3s4rr0ll0";
-//        try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            con = DriverManager.getConnection(cadena);
-//            System.out.println("Conexion exitosa");
-//        } catch (ClassNotFoundException | SQLException e) {
-//            System.out.println("Error:" + e);
-//        }
         return con;
     }
 

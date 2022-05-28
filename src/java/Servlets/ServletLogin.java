@@ -1,18 +1,32 @@
 package Servlets;
 
+import Beans.MProductos;
+import Utils.ConexionDB;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.servlet.http.HttpSession;
+
+import Utils.ConexionDB;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author belse
  */
-@WebServlet(name="ServletLogin",urlPatterns={"/ServletLogin"})
+@WebServlet(name = "ServletLogin", urlPatterns = {"/ServletLogin"})
 public class ServletLogin extends HttpServlet {
 
     /**
@@ -28,6 +42,8 @@ public class ServletLogin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
+            String op = request.getParameter("op");
+            request.getRequestDispatcher("pages/admin/login.jsp").forward(request, response);
 
         }
     }
@@ -45,6 +61,7 @@ public class ServletLogin extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+
     }
 
     /**
@@ -56,9 +73,32 @@ public class ServletLogin extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+
+        String usu = request.getParameter("txtUsu");
+        String pas = request.getParameter("txtPas");
+        try {
+            PreparedStatement psta = ConexionDB.getConexion().
+                    prepareStatement("SELECT * FROM users WHERE email=? AND password=?");
+            psta.setString(1, usu);
+            psta.setString(2, pas);
+            ResultSet rs = psta.executeQuery();
+            if (rs.next()) {
+                jakarta.servlet.http.HttpSession sesionOk = request.getSession();
+                sesionOk.setAttribute("nombre", rs.getString(2).toString());
+                sesionOk.setAttribute("perfil", rs.getString(4).toString());
+                request.getRequestDispatcher("pages/admin/productos.jsp").forward(request, response);
+            } else {
+                request.setAttribute("msg", "Usuario o contraseña Incorrectos");
+                request.getRequestDispatcher("pages/admin/login.jsp").forward(request, response);
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+
     }
 
     /**
