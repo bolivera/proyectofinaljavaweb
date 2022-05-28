@@ -10,19 +10,44 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <title>Domiman</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.5">
         <link href="assets/css/app.css" type="text/css" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.gstatic.com">    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
         <jsp:include page="header/header.jsp" />  
+        <section class="mh-full-screens mt-4">
+            <!-- Circle Slider-->
+            <div class="owl-carousel owl-theme">
+                <div class="item d-flex align-items-end bg-gray-100 light-overlay light-overlay-md-0"
+                     style="padding-top: 80px;">
+                    <div class="container circle-slider-bg"
+                         style="background:  right bottom url(/proyectofinaljavaweb/storage/galerias/2021-05-30_1622355492.jpg) no-repeat; ">
+                        <div class="w-100">
+                            <div class="row py-5">
+                                <div
+                                    class="col-lg-6 py-md-5 py-lg-7 overlay-content">
+                                    <h5 class="text-uppercase text-danger mb-3 letter-spacing-5"> COLECCIÓN</h5>
+                                    <h2 class="mb-3">Colección de verano</h2>
+                                    <p class="lead mb-4">El mejor calzado de moda para esta temporada </p>
+
+                                    <p><a class="btn btn-outline-dark" href="Productos" >Ver colección</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     <section class=" pb-5">
                         <div class="container">
                             <div class="row">
-                                <div class="col-xl-8 mx-auto text-center mb-5">
+                                <div class="col-xl-8 mx-auto text-center mb-5 mt-6">
                                     <h2 class="text-uppercase">Lo más reciente</h2>
                                     <p class="lead text-muted">Inspirados en tu comodidad y gustos por el cuero de calidad con lo
                                         último en tendencia al mejor precio..</p>

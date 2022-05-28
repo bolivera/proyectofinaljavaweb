@@ -1,26 +1,16 @@
 package Servlets;
 
-import Beans.MProductos;
-import Utils.ConexionDB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import javax.servlet.http.HttpSession;
-
 import Utils.ConexionDB;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 
 /**
  *
@@ -41,11 +31,9 @@ public class ServletLogin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            String op = request.getParameter("op");
-            request.getRequestDispatcher("pages/admin/login.jsp").forward(request, response);
+        String op = request.getParameter("op");
+        request.getRequestDispatcher("pages/admin/login.jsp").forward(request, response);
 
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -73,7 +61,6 @@ public class ServletLogin extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
@@ -87,14 +74,18 @@ public class ServletLogin extends HttpServlet {
             psta.setString(2, pas);
             ResultSet rs = psta.executeQuery();
             if (rs.next()) {
-                jakarta.servlet.http.HttpSession sesionOk = request.getSession();
-                sesionOk.setAttribute("nombre", rs.getString(2).toString());
-                sesionOk.setAttribute("perfil", rs.getString(4).toString());
-                request.getRequestDispatcher("pages/admin/productos.jsp").forward(request, response);
+                HttpSession sesionOk = request.getSession();
+
+                sesionOk.setAttribute("nombre", rs.getString("name"));
+                sesionOk.setAttribute("perfil", rs.getString("email"));
+                this.getServletContext().getRequestDispatcher("/pages/admin/productos.jsp").forward(request, response);
+
             } else {
                 request.setAttribute("msg", "Usuario o contraseña Incorrectos");
-                request.getRequestDispatcher("pages/admin/login.jsp").forward(request, response);
+                RequestDispatcher d = request.getRequestDispatcher("/pages/admin/login.jsp");
+              
             }
+            rs.close();
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }

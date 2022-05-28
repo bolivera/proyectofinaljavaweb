@@ -1,17 +1,15 @@
-<%-- 
-    Document   : productos
-    Created on : 30 abr. 2022, 22:20:01
-    Author     : belse
---%>
+<jsp:include page="pages/admin/compartidos/header.jsp" /> 
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<h3 align="center">Bienvenido al Sistema de Citas Médicas</h3>
+        <style>
+            body {
+                background-image: url('img/clinica.jpg');
+                background-repeat: no-repeat;  
+                background-color: #ccffcc;
+                background-position: center 100px;
+                background-origin: padding-box, content-box;  
+                background-size: cover;
+            }
+        </style>
+        </body>
+        </html>
