@@ -1,11 +1,5 @@
 
-<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="Utils.ConexionDB"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="Beans.MProductos"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,7 +7,8 @@
         <title>Domiman</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.5">
         <link href="assets/css/app.css" type="text/css" rel="stylesheet" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">    
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
         <jsp:include page="header/header.jsp" />  

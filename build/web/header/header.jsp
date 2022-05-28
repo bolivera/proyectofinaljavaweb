@@ -22,11 +22,9 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </div>
-
     <nav class="navbar navbar-expand-lg bg-transparent navbar-light navbar-airy bg-fixed-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="/proyectofinaljavaweb">
@@ -42,17 +40,15 @@
                             Inicio<i class="fa fa-angle-down"></i>
                         </a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="Productos">Todos los
+                    <li class="nav-item"><a class="nav-link" href="/proyectofinaljavaweb/Productos">Todos los
                             productos</a>
                     </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link " id="docsDropdownMenuLink" href="#" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">Categorías<i class="fa fa-angle-down"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="docsDropdownMenuLink">
                             <h6 class="dropdown-header font-weight-normal">Lista de categorías</h6>
-
                             <a class="dropdown-item" >Botas de vestir</a>
                         </div>
                     </li>
@@ -65,10 +61,8 @@
                     </div>
                     <div id="listCartheader">
                     </div>
-
                 </div>
             </div>
         </div>
     </nav>
-
 </header>

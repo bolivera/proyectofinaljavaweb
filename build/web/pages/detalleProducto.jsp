@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Detalle</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.5">
         <link href="/proyectofinaljavaweb/assets/css/app.css" type="text/css" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.gstatic.com">    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     </head>
@@ -109,10 +110,9 @@
                                 </div>
                                 <ul class="list-inline mb-3">
                                     <li class="list-inline-item">
-                                        <button type="button" class="mb-1 btn btn-dark rounded-3 add-cart"
-                                                data-id="{{$producto->id}}"><i class="icofont-ui-cart icofont-lg"></i>
+                                        <a href="/proyectofinaljavaweb/pages/carrito.jsp" type="button" class="mb-1 btn btn-dark rounded-3 add-cart"                                                ><i class="icofont-ui-cart icofont-lg"></i>
                                             Agregar al carrito
-                                        </button>
+                                        </a>
                                     </li>
                                     <li class="list-inline-item"></li>
                                 </ul>

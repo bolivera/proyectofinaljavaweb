@@ -8,7 +8,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.5">
+        <title>Tps</title>
         <link href="/proyectofinaljavaweb/assets/css/app.css" type="text/css" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.gstatic.com">    
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -25,18 +26,13 @@
 
                         </div>
                     </div>
-
                     <h1 class="mb-3">
                         <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">Todos los productos</font>
                         </font>
                     </h1>
-
-
                 </div>
-
             </div>
-
         </section>
         <div class="container">
             <div class="row">
